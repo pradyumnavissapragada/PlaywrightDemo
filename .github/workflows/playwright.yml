@@ -26,6 +26,11 @@ jobs:
           node-version: '22'
       - name: Install dependencies
         run: npm install --no-audit --no-fund
+      - name: Show generated dependency lockfile for reproducible review
+        run: |
+          echo 'LOCKFILE_BEGIN'
+          cat package-lock.json
+          echo 'LOCKFILE_END'
       - name: TypeScript check
         run: npm run typecheck
       - name: Install Playwright browsers
