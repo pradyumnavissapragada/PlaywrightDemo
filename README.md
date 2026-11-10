@@ -51,6 +51,6 @@ Each push/PR runs TypeScript validation and UI/API suites. The workflow uploads 
 
 ## Reproducibility & hardening backlog
 
-The initial review branch does **not** include a generated `package-lock.json` because package registry access was unavailable during authoring. Generate and commit it using `npm install` in an environment with registry access, then replace the workflow's `npm install` with `npm ci`. Pin CI action SHAs, add ESLint, dependency scanning, controlled test data, accessibility coverage, and evidence-backed performance baselines before presenting this as enterprise production-ready.
+The project includes a CI-generated, committed `package-lock.json`; GitHub Actions uses `npm ci` for reproducible dependency installation. Pin CI action SHAs, add ESLint, dependency scanning, controlled test data, accessibility coverage, and evidence-backed performance baselines before presenting this as enterprise production-ready.
 
 See [test strategy](docs/TEST-STRATEGY.md) for scope, entry/exit criteria and known limitations.
