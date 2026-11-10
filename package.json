@@ -1,0 +1,23 @@
+{
+  "name": "playwright-enterprise-qa-framework",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reviewable UI and API quality engineering reference implementation",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test --project=chromium --project=firefox --project=webkit",
+    "test:api": "playwright test --project=api",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:report": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "test:list": "playwright test --list"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0",
+    "typescript": "5.9.3",
+    "@types/node": "^22.0.0"
+  }
+}
